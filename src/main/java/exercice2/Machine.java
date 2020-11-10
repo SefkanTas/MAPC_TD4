@@ -1,4 +1,4 @@
-package exercice1;
+package exercice2;
 
 public class Machine {
     private MachineState state;
@@ -32,6 +32,10 @@ public class Machine {
         return balance >= price;
     }
 
+    void payProduct(){
+        balance-=price;
+    }
+
     public void give(int amount){
         state.give(this, amount);
     }
@@ -43,4 +47,9 @@ public class Machine {
     public void askTea(){
         state.askProduct(this, "Tea");
     }
+
+    public int getRefund(){
+        return state.getRefund(this);
+    }
+
 }
